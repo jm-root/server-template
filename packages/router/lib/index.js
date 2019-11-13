@@ -10,6 +10,7 @@ class Router {
   constructor (service, { dir }) {
     const router = ms.router()
     this.router = router
+    service.rootRouter = router
 
     wrapper(service.t)(router)
 
@@ -19,8 +20,6 @@ class Router {
         if (!service.ready) throw error.err(error.Err.FA_NOTREADY)
       })
       .use(loadRouter(service, dir))
-
-    service.rootRouter = router
   }
 }
 
