@@ -4,8 +4,8 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "cross-env jm-server",
-    "cluster": "cross-env jm-server --cluster",
+    "start": "npx jm-server",
+    "cluster": "npx jm-server --cluster",
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "config": "^3.2.3",
-    "cross-env": "^6.0.3",
     "jm-server": "^2.0.9"
   },
   "devDependencies": {
