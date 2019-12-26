@@ -1,20 +1,23 @@
 const log = require('jm-log4js')
-const event = require('jm-event')
-const MS = require('jm-ms')
+const { EventEmitter } = require('jm-event')
 const t = require('locale')
 
 const logger = log.getLogger('main')
-const ms = new MS()
 
-class Service {
+class Service extends EventEmitter {
   constructor (opts = {}) {
+    super({ async: true })
+    this.onReady()
+
     const { gateway, debug, app } = opts
     debug && (logger.setLevel('debug'))
 
-    event.enableEvent(this, { sync: true })
-    Object.assign(this, { app, logger, t, gateway })
+    Object.assign(this, { app, logger, t })
 
-    this.onReady()
+    if (gateway) {
+      require('./gateway')({ gateway })
+        .then(doc => { this.gateway = doc })
+    }
   }
 
   async onReady () {
@@ -25,14 +28,6 @@ class Service {
         resolve()
       })
     })
-  }
-
-  async bind (name, uri) {
-    uri || (uri = `/${name}`)
-    uri.indexOf('http') !== 0 && (uri = this.gateway + uri)
-    let doc = await ms.client({ uri })
-    this[name] = doc
-    return doc
   }
 }
 

@@ -2,5 +2,12 @@ module.exports = {
   gateway: 'gateway',
   redis: 'redis',
   mysql: 'mysql',
-  mongo: 'mongo'
+  service_name: 'service_name',
+  modules: {
+    'jm-server-jaeger': {
+      config: {
+        jaeger: 'jaeger'
+      }
+    }
+  }
 }

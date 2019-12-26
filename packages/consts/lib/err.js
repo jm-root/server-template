@@ -1,10 +1,4 @@
-let BaseErrCode = 10000
-const Err = {
-  FA_VALIDATION: {
-    err: BaseErrCode++,
-    msg: 'Validation Error'
-  }
-}
+const Err = {}
 
 module.exports = {
   Err
