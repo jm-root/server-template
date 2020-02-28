@@ -13,7 +13,8 @@ module.exports = class extends Service {
     Object.assign(this, { app, logger, t })
 
     if (gateway) {
-      this.gateway = require('./gateway')({ gateway })
+      require('./gateway')({ gateway })
+        .then(doc => { this.gateway = doc })
     }
   }
 }
