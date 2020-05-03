@@ -8,8 +8,9 @@ beforeAll(async () => {
 
 describe('service', async () => {
   test('bind', async () => {
-    await service.bind('config')
-    const doc = await service.config.get('/')
+    const { gateway } = service
+    await gateway.bind('config')
+    const doc = await gateway.config.get('/')
     console.log(doc)
   })
 })
