@@ -1,8 +1,6 @@
-# server-template
+# 微服务器应用模板 server-template
 
-服务器模板
-
-## <a name="环境变量">环境变量</a>
+## 环境变量
 
 - jm-server
 
@@ -10,13 +8,11 @@
 
 - main
 
---
 
 ### jm-server
 
 请参考 [jm-server](https://github.com/jm-root/ms/tree/master/packages/jm-server)
 
---
 
 ### jm-server-jaeger
 
@@ -25,7 +21,6 @@
 |service_name|"server-template"| 链路追踪登记的服务名称 |
 |jaeger| |jaeger服务器Uri| 链路追踪服务器
 
---
 
 ### main
 
