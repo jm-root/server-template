@@ -4,12 +4,12 @@ const { sequelize: { filter } } = require('jm-ms-middleware')
 module.exports = function (service) {
   const router = ms.router()
   router
-    .use(filter('conditions', 'crtime', 'nid')) // 过滤
+    .use(filter('conditions', 'crtime', 'nid')) // 条件过滤
     .add('/danweis', 'get', opts => {
-      const { model } = service.app
+      const { models } = service.app.modules.orm.sequelize
       opts.include || (opts.include = [
-        { model: model.danwei, as: 'govern', attributes: ['code', 'name'] },
-        { model: model.region, as: 'region', attributes: ['name'] }
+        { model: models.danwei, as: 'govern', attributes: ['code', 'name'] },
+        { model: models.region, as: 'region', attributes: ['name'] }
       ])
     })
     .use(opts => {
