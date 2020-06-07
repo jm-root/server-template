@@ -1,4 +1,4 @@
-let lngs = {
+const lngs = {
   zh_CN: require('./zh_CN')
 }
 
