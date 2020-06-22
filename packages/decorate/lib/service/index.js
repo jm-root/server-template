@@ -1,4 +1,5 @@
-module.exports = class extends require('service') {
+'use strict'
+module.exports = class extends require('jm-server').Service {
   constructor (opts = {}, app) {
     super(opts)
     this.app = app

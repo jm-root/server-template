@@ -1,8 +1,12 @@
 const { Service, ms } = require('jm-server')
 module.exports = class extends Service {
-  constructor (opts = {}) {
+  constructor (opts = {}, app) {
     super(opts)
-    this.app = opts.app
+    this.app = app // 服务实例
+
+    // 引用jm-server-middleware模块中间件,快速建立数据模型实例
+    const { modules: { orm } } = this.app
+    this.orm = orm
 
     this.emit('ready')
   }

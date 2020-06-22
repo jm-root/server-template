@@ -9,6 +9,7 @@ module.exports = {
       config: {
         uri: 'mysql://root:123@mysql.l.jamma.cn/main', // A full database URI;
       }
-    }
+    },
+    main: {}
   }
 }

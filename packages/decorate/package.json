@@ -1,10 +1,11 @@
 {
-  "name": "hello",
+  "name": "decorate",
   "version": "0.0.1",
   "description": "",
   "main": "./lib/service",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc"
   },
   "author": "Jeff YU",
   "dependencies": {},

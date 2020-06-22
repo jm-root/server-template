@@ -52,5 +52,11 @@ module.exports = function (sequelize, DataTypes) {
       deletedAt: 'deltime'
     })
 
+  model.routes = {
+    opts: {
+      routes: ['create', 'list', 'get', 'update', 'remove', 'save'], // 定义哪些路由
+      keywords: ['name'] // 设置模糊查询字段
+    }
+  }
   return model
 }
