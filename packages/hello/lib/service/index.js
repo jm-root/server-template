@@ -1,6 +1,7 @@
 module.exports = class extends require('service') {
-  constructor (opts = {}) {
+  constructor (opts = {}, app) {
     super(opts)
+    this.app = app
     this.emit('ready')
   }
 

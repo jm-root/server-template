@@ -4,10 +4,8 @@ module.exports = {
   gateway: 'http://gateway.test.jamma.cn',
   modules: {
     orm: {
-      module: 'jm-server-middleware',
-      jsonpath: '$.sequelize',
       config: {
-        uri: 'mysql://root:123@mysql.l.jamma.cn/main', // A full database URI;
+        uri: 'mysql://root:123@localhost/main', // A full database URI;
       }
     }
   }
