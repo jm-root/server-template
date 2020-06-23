@@ -1,10 +1,8 @@
 const { ms } = require('jm-server')
-const { sequelize: { filter } } = require('jm-ms-middleware')
 
 module.exports = function (service) {
   const router = ms.router()
   router
-    .use(filter('conditions', 'crtime', 'nid')) // 条件过滤
     .add('/danweis', 'get', opts => {
       const { models } = service.app.modules.orm.sequelize
       opts.include || (opts.include = [

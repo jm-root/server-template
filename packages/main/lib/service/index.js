@@ -1,8 +1,8 @@
 const { Service, ms } = require('jm-server')
 module.exports = class extends Service {
-  constructor (opts = {}) {
+  constructor (opts = {}, app) {
     super(opts)
-    this.app = opts.app
+    this.app = app
 
     this.emit('ready')
   }

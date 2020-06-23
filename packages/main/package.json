@@ -1,7 +1,7 @@
 {
   "name": "main",
   "version": "1.0.0",
-  "main": "./lib/index",
+  "main": "./lib/service/index",
   "scripts": {
     "test": "jest"
   }
