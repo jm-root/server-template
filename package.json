@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "config": "^3.2.3",
-    "jm-server": "^2.1.4",
+    "jm-server": "^2.1.5",
     "jm-server-jaeger": "^0.0.4",
     "jm-server-middleware": "^1.0.1",
     "log4js": "^6.1.0"
