@@ -7,11 +7,11 @@ module.exports = {
     'jm-server-jaeger': {
       config: {
         jaeger: 'jaeger'
-      },
-      orm: {
-        config: {
-          uri: 'orm_uri'
-        }
+      }
+    },
+    orm: {
+      config: {
+        uri: 'orm_uri'
       }
     }
   }
