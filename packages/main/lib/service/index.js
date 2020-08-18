@@ -23,19 +23,21 @@ module.exports = class extends Service {
     // 数据库事务支持
     const routerT = ms.router()
     routerT
-      .use(opts => {
-        return new Promise((resolve, reject) => {
-          const { modules: { orm } } = this.app
-          orm.sequelize.transaction(async () => {
-            try {
-              const doc = await router.request(opts)
-              resolve(doc)
-            } catch (e) {
-              reject(e)
-              throw e
-            }
+      .use(async opts => {
+        const { modules: { orm } } = this.app
+        try {
+          const doc = await orm.sequelize.transaction(async () => {
+            return router.request(opts)
           })
-        })
+          return doc
+        } catch (e) {
+          let err = e
+          if (e.message === 'Validation error' && Array.isArray(e.errors)) {
+            const item = e.errors[0]
+            err = new Error(item.message || e.message)
+          }
+          throw err
+        }
       })
 
     return routerT
