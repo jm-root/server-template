@@ -37,3 +37,18 @@
 | :---                 | :---:         | :--- |
 |gateway               | []            | Gateway服务器Uri |
 |orm_uri               | ''            | mysql数据库连接地址 |
+
+## tips
+
+model 可以采用 sequelize-auto 从数据库逆向生成
+
+```
+node ./generateModel.js
+```
+
+或直接命令行
+
+```
+sequelize-auto -o "./model" -d main -h localhost -u root -x 123 -e mysql
+```
+

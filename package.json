@@ -58,6 +58,7 @@
     "jest": "^23.1.0",
     "lerna": "^3.22.0",
     "lint-staged": "^8.1.0",
+    "sequelize-auto": "^0.6.3",
     "standardx": "^5.0.0",
     "typescript": "^3.8.3"
   }
