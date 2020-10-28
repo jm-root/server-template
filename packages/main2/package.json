@@ -1,0 +1,9 @@
+{
+  "name": "main2",
+  "version": "0.0.1",
+  "main": "./lib/service",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  }
+}

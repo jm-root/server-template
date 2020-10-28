@@ -37,7 +37,8 @@
     ],
     "ignore": [
       "**/dist/",
-      "**/decorate/lib/"
+      "**/decorate/lib/",
+      "**/main2/lib/"
     ],
     "parser": "@typescript-eslint/parser",
     "plugins": [

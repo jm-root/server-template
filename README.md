@@ -8,12 +8,15 @@
 ```
 |--- config                          配置目录
 |--- model                           数据模型定义
+|--- spec                            Api接口文档例子 openapi 3.0
+|--- tests                           启动服务器进行单元测试的例子，黑盒测试也可以在这里写
 |--- packages                        包目录
     |--- consts                      常量定义目录
     |--- locale                      国际语言定义目录
     |--- decorate                    typeScript装饰器定义路由例子
     |--- hello                       简单例子
     |--- main                        引入orm快速定义CURD路由例子
+    |--- main2                       引入orm快速定义CURD路由例子, 采用typeScript装饰器 
     |--- utils                       通用工具库
 
 ```

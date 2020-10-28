@@ -11,6 +11,7 @@ module.exports = {
     },
     hello: {},
     main: {},
+    main2: {},
     decorate: {}
   }
 }
