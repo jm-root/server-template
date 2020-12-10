@@ -12,6 +12,7 @@ module.exports = {
     orm: {
       config: {
         uri: 'orm_uri'
+
       }
     }
   }

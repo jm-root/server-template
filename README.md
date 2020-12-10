@@ -40,6 +40,7 @@
 | :---                 | :---:         | :--- |
 |gateway               | []            | Gateway服务器Uri |
 |orm_uri               | ''            | mysql数据库连接地址 |
+|orm_underscored       | true          | 字段名是否遵循snake命名法(即下划线) |
 
 ## tips
 
