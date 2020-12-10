@@ -11,8 +11,12 @@ module.exports = {
     },
     orm: {
       config: {
-        uri: 'orm_uri'
-
+        uri: 'orm_uri',
+        options: {
+          define: {
+            underscored: 'orm_underscored'
+          }
+        }
       }
     }
   }
