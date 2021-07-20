@@ -1,7 +1,7 @@
 const event = require('jm-event')
 class Service {
   constructor () {
-    event.enableEvent(this, { sync: true })
+    event.enableEvent(this, { async: true })
     this.onReady()
   }
 
