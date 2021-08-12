@@ -11,13 +11,13 @@ let $ = class $ {
     constructor(service) {
         this.service = service; // 服务实例
     }
-    async getWarehouses(opts) {
+    async list(opts) {
         console.log(opts);
     }
 };
 __decorate([
     get('/')
-], $.prototype, "getWarehouses", null);
+], $.prototype, "list", null);
 $ = __decorate([
     controller
 ], $);

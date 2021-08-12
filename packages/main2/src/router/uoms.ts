@@ -8,7 +8,7 @@ class $ {
   }
 
   @get('/')
-  async getWarehouses (opts: {}) {
+  async list (opts: {}) {
     console.log(opts)
   }
 }

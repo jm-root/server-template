@@ -34,8 +34,9 @@ module.exports = function (service) {
     }), opts => {
       const { models } = service.app.modules.orm.sequelize
       opts.include || (opts.include = [
-        { model: models.danwei, as: 'govern', attributes: ['code', 'name'] },
-        { model: models.region, as: 'region', attributes: ['name'] }
+        { model: models.location, as: 'fromLocation', attributes: ['name'] },
+        { model: models.location, as: 'toLocation', attributes: ['name'] },
+        { model: models.uom, as: 'uom', attributes: ['name'] }
       ])
     })
   return router

@@ -11,7 +11,7 @@ const { validator, sequelize } = require('jm-ms-middleware')
 let A = class A {
   constructor (service) {
     this.service = service // 服务实例
-    this.model = this.service.orm.sequelize.models.danwei // 引用单位数据模型
+    this.model = this.service.orm.sequelize.models.uom // 引用单位数据模型
   }
 
   /**
@@ -20,7 +20,7 @@ let A = class A {
      */
   router () {
     const router = ms.router()
-    router.use('/danweis', sequelize.resful(this.model))
+    router.use('/uoms', sequelize.resful(this.model))
     return router
   }
 
