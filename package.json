@@ -47,7 +47,10 @@
   },
   "dependencies": {
     "config": "^3.2.3",
-    "jm-server": "^2.1.5",
+    "jm-err": "^1.0.8",
+    "jm-event": "^2.0.10",
+    "jm-ms-core": "^2.2.5",
+    "jm-server": "^2.2.2-beta",
     "jm-server-jaeger": "^0.0.4",
     "jm-server-middleware": "^1.0.1",
     "log4js": "^6.1.0"
