@@ -5,13 +5,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-const { decorators: { controller, get } } = require('jm-server');
+const jm_server_1 = require("jm-server");
+const { controller, get } = jm_server_1.decorators;
 // 装饰器定义路由
 let $ = class $ {
     constructor(service) {
         this.service = service; // 服务实例
     }
-    async list(opts) {
+    async list(opts = {}) {
         console.log(opts);
     }
 };

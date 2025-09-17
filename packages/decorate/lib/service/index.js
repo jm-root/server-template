@@ -1,5 +1,6 @@
 "use strict";
-module.exports = class extends require('jm-server').Service {
+const jm_server_1 = require("jm-server");
+module.exports = class extends jm_server_1.Service {
     constructor(opts = {}, app) {
         super(opts);
         this.app = app;

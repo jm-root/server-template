@@ -5,23 +5,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-const module_1 = require();
-from;
-'jm-server';
-const { validator, sequelize } = require('jm-ms-middleware');
+const jm_server_1 = require("jm-server");
+const jm_ms_middleware_1 = require("jm-ms-middleware");
+const { controller, use, add, get, post, del } = jm_server_1.decorators;
 // 装饰器定义路由
 let A = class A {
     constructor(service) {
         this.service = service; // 服务实例
-        this.model = this.service.orm.sequelize.models.danwei; // 引用单位数据模型
+        this.model = this.service.orm.sequelize.models.transaction; // 引用transaction数据模型
     }
     /**
      * 快速定义增删改查路由
      * 注: 该函数定义的路由将附加到当前路由最后
      */
     router() {
-        const router = module_1.ms.router();
-        router.use('/danweis', sequelize.resful(this.model));
+        const router = jm_server_1.ms.router();
+        router.use('/transactions', jm_ms_middleware_1.sequelize.resful(this.model));
         return router;
     }
     /**
@@ -61,7 +60,6 @@ let A = class A {
      * @param opts
      */
     async add(opts) {
-        !this.caches && (this.caches = []);
         this.caches.push(opts.data);
         return { result: opts.data };
     }
@@ -75,7 +73,6 @@ let A = class A {
      * delete请求
      */
     async remove() {
-        !this.caches && (this.caches = []);
         this.caches.pop();
         return this.caches;
     }
@@ -90,7 +87,7 @@ __decorate([
     add('/info/:id', 'put')
 ], A.prototype, "update", null);
 __decorate([
-    get('/info/:id', validator({
+    get('/info/:id', (0, jm_ms_middleware_1.validator)({
         id: { type: 'number', convert: true, positive: true }
     }))
 ], A.prototype, "id", null);

@@ -12,7 +12,7 @@ class A {
 
   constructor (service: any) {
     this.service = service // 服务实例
-    this.model = this.service.orm.sequelize.models.danwei // 引用单位数据模型
+    this.model = this.service.orm.sequelize.models.transaction // 引用transaction数据模型
   }
 
   /**
@@ -21,7 +21,7 @@ class A {
    */
   router () {
     const router = ms.router()
-    router.use('/danweis', sequelize.resful(this.model))
+    router.use('/transactions', sequelize.resful(this.model))
     return router
   }
 
