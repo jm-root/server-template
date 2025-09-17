@@ -1,11 +1,13 @@
-const { ms, decorators: { controller, use, add, get, post, del } } = require('jm-server')
-const { validator, sequelize } = require('jm-ms-middleware')
+import { ms, decorators} from 'jm-server'
+import { validator, sequelize } from 'jm-ms-middleware'
+
+const { controller, use, add, get, post, del } = decorators
 
 // 装饰器定义路由
 @controller
 class A {
   service: any
-  caches: any[] | undefined
+  caches: any[]
   private model: any
 
   constructor (service: any) {
@@ -71,7 +73,6 @@ class A {
    */
   @post('/caches')
   async add (opts: any) {
-    !this.caches && (this.caches = [])
     this.caches.push(opts.data)
     return { result: opts.data }
   }
@@ -89,7 +90,6 @@ class A {
    */
   @del('/caches')
   async remove () {
-    !this.caches && (this.caches = [])
     this.caches.pop()
     return this.caches
   }

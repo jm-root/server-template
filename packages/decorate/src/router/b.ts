@@ -1,4 +1,4 @@
-const {ms} = require('jm-server')
+import {ms} from 'jm-server'
 
 // 类方式定义路由
 class B {

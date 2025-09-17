@@ -1,4 +1,6 @@
-const { decorators: { controller, get } } = require('jm-server')
+import { decorators} from 'jm-server'
+const { controller, get } = decorators
+
 // 装饰器定义路由
 @controller
 class $ {
@@ -8,7 +10,7 @@ class $ {
   }
 
   @get('/')
-  async list (opts: {}) {
+  async list (opts: any = {}) {
     console.log(opts)
   }
 }

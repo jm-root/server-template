@@ -1,4 +1,5 @@
-export = class extends require('jm-server').Service {
+import {Service} from 'jm-server'
+export = class extends Service {
   constructor (opts = {}, app: any) {
     super(opts)
     this.app = app

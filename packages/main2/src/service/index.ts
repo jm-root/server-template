@@ -1,4 +1,4 @@
-const { Service, ms } = require('jm-server')
+import { Service, ms } from 'jm-server'
 export = class extends Service {
   constructor (opts = {}, app: any) {
     super(opts)

@@ -1,6 +1,6 @@
 "use strict";
-const { Service, ms } = require('jm-server');
-module.exports = class extends Service {
+const jm_server_1 = require("jm-server");
+module.exports = class extends jm_server_1.Service {
     constructor(opts = {}, app) {
         super(opts);
         this.app = app;
@@ -21,7 +21,7 @@ module.exports = class extends Service {
         });
         this.router = router;
         // 数据库事务支持
-        const routerT = ms.router();
+        const routerT = jm_server_1.ms.router();
         routerT
             .use(async (opts) => {
             const { modules: { orm } } = this.app;

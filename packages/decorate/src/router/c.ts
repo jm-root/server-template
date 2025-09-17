@@ -1,4 +1,4 @@
-const {ms} = require('jm-server')
+import {ms} from 'jm-server'
 
 // 函数方式定义路由
 export = function(){

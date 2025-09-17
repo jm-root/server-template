@@ -35,7 +35,7 @@ export default [
 			parserOptions: {
 				ecmaVersion: 2022,
 				sourceType: "module",
-			},
+			}
 		},
 		plugins: {
 			"@typescript-eslint": tseslint,
@@ -43,6 +43,7 @@ export default [
 		rules: {
 			...tseslint.configs.recommended.rules,
 			// 项目自定义规则
+			"@typescript-eslint/no-explicit-any": "off"
 		},
 	},
 	// Prettier集成与忽略配置
