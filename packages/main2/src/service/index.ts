@@ -1,4 +1,5 @@
-import { Service, ms } from 'jm-server'
+import { ms } from 'jm-server'
+import { Service } from 'service'
 export = class extends Service {
   constructor (opts = {}, app: any) {
     super(opts)
